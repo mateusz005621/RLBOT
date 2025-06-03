@@ -19,19 +19,34 @@ Ten projekt ma na celu stworzenie bota opartego na sztucznej inteligencji (AI), 
 
 ## Wymagania Wstępne
 
-(Zostanie uzupełnione później)
+- Python 3.8 lub nowszy
+- Zainstalowana gra **Rocket League**
+- Biblioteka `rlgym` umożliwiająca komunikację gry z Pythonem
 
 ## Instalacja
 
-(Zostanie uzupełnione później)
+1. Sklonuj repozytorium i przejdź do katalogu `RocketLeagueRLBot`.
+2. Zainstaluj zależności komendą:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Użycie
 
-(Zostanie uzupełnione później)
+1. Uruchom Rocket League w trybie treningu.
+2. Następnie w terminalu wykonaj:
+
+   ```bash
+   python -m src.main
+   ```
 
 ## Trening Bota
 
-(Zostanie uzupełnione później)
+Parametry treningu znajdują się w pliku `config/settings.json` w sekcji
+`training_params`. Domyślnie bot trenuje przez 10 epizodów. Możesz zmienić tę
+wartość na dowolną liczbę. Po uruchomieniu skryptu `python -m src.main` bot
+rozpocznie prostą sesję treningową w przygotowanym środowisku.
 
 ## TODO
 

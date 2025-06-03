@@ -1,36 +1,44 @@
 # Ten plik będzie zawierał definicję środowiska Rocket League,
 # zgodnego z interfejsem typowym dla bibliotek reinforcement learning (np. OpenAI Gym).
 
+import random
+
+
 class RocketLeagueEnv:
+    """Proste środowisko demonstracyjne dla bota Rocket League."""
+
     def __init__(self, config):
-        self.config = config
-        # TODO: Inicjalizacja połączenia z grą Rocket League
-        # np. przy użyciu rlgym lub innego API
+        self.config = config or {}
+        # W prawdziwym projekcie tutaj należałoby zainicjalizować połączenie z
+        # grą Rocket League przy użyciu np. biblioteki rlgym.
         print("Środowisko Rocket League zainicjalizowane.")
-        self.observation_space = None # Zdefiniuj przestrzeń obserwacji
-        self.action_space = None    # Zdefiniuj przestrzeń akcji
+        self.observation_space = self.config.get("env_params", {}).get(
+            "observation_space", 10
+        )
+        self.action_space = self.config.get("env_params", {}).get(
+            "action_space", 5
+        )
 
     def reset(self):
-        # TODO: Zresetuj stan gry do początkowego
+        """Resetuje środowisko i zwraca początkowy stan."""
         print("Resetowanie środowiska.")
-        initial_state = None # Pobierz początkowy stan
+        # W prawdziwej implementacji zwrócony zostałby stan gry po restarcie.
+        initial_state = [0.0 for _ in range(self.observation_space)]
         return initial_state
 
     def step(self, action):
-        # TODO: Wykonaj akcję w grze i zwróć nowy stan, nagrodę, flagę zakończenia epizodu i dodatkowe informacje
+        """Wykonuje akcję i zwraca rezultaty."""
         print(f"Wykonywanie akcji: {action}")
-        next_state = None
-        reward = 0
-        done = False
+        next_state = [random.random() for _ in range(self.observation_space)]
+        reward = random.random()
+        done = random.random() < 0.1
         info = {}
         return next_state, reward, done, info
 
     def render(self, mode='human'):
-        # TODO: Opcjonalnie, renderuj stan gry (jeśli to potrzebne i możliwe)
+        """Opcjonalne renderowanie stanu gry."""
         print(f"Renderowanie środowiska (tryb: {mode})")
-        pass
 
     def close(self):
-        # TODO: Zamknij połączenie z grą i zwolnij zasoby
+        """Zamyka środowisko i zwalnia zasoby."""
         print("Zamykanie środowiska Rocket League.")
-        pass 

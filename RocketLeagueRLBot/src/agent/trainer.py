@@ -10,12 +10,13 @@ class AgentTrainer:
 
     def train(self, num_episodes):
         print(f"Rozpoczynam trening na {num_episodes} epizodów.")
-        # TODO: Implementacja pętli treningowej
         for episode in range(num_episodes):
-            # Logika pojedynczego epizodu treningowego
             print(f"Epizod {episode + 1}/{num_episodes}")
-            # Zresetuj środowisko
-            # Wykonuj akcje, obserwuj stany i nagrody
-            # Aktualizuj model
-            pass
-        print("Trening zakończony.") 
+            state = self.environment.reset()
+            done = False
+            while not done:
+                action = self.agent_model.predict(state)
+                next_state, reward, done, _ = self.environment.step(action)
+                # TODO: tutaj należałoby zaimplementować aktualizację modelu
+                state = next_state
+        print("Trening zakończony.")
