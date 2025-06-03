@@ -8,5 +8,12 @@
   "agent_params": {
     "learning_rate": 0.001,
     "discount_factor": 0.99
+  },
+  "training_params": {
+    "num_episodes": 10
+  },
+  "env_params": {
+    "observation_space": 10,
+    "action_space": 5
   }
-} 
+}
