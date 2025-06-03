@@ -1,0 +1,5 @@
+# Ten plik będzie zawierał listę zależności projektu Python.
+# Przykładowo:
+# tensorflow
+# numpy
+# rlgym 

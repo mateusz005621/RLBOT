@@ -1,0 +1,12 @@
+{
+  "bot_name": "MyRocketLeagueBot",
+  "version": "0.1.0",
+  "game_settings": {
+    "resolution_x": 1920,
+    "resolution_y": 1080
+  },
+  "agent_params": {
+    "learning_rate": 0.001,
+    "discount_factor": 0.99
+  }
+} 
