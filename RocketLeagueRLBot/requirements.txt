@@ -2,4 +2,6 @@
 # Przykładowo:
 # tensorflow
 # numpy
-# rlgym 
+# rlgym
+rlbot
+

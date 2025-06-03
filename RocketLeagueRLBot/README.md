@@ -27,7 +27,16 @@ Ten projekt ma na celu stworzenie bota opartego na sztucznej inteligencji (AI), 
 
 ## Użycie
 
-(Zostanie uzupełnione później)
+Możesz uruchomić mecz offline używając RLBot i pliku konfiguracyjnego
+`rlbot.cfg`. Przykładowo:
+
+```bash
+python -m src.env.rlbot_injector path/to/rlbot.cfg
+```
+
+Skrypt `rlbot_injector.py` wykorzystuje bibliotekę RLBot do
+uruchomienia gry i wstrzyknięcia bota zgodnie z ustawieniami w pliku
+konfiguracyjnym.
 
 ## Trening Bota
 
