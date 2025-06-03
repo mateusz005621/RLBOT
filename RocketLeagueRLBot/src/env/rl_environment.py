@@ -1,36 +1,42 @@
 # Ten plik będzie zawierał definicję środowiska Rocket League,
 # zgodnego z interfejsem typowym dla bibliotek reinforcement learning (np. OpenAI Gym).
 
-class RocketLeagueEnv:
+import gym
+import numpy as np
+
+
+class RocketLeagueEnv(gym.Env):
+    """Proste środowisko testowe."""
+
     def __init__(self, config):
+        super().__init__()
         self.config = config
-        # TODO: Inicjalizacja połączenia z grą Rocket League
-        # np. przy użyciu rlgym lub innego API
+
+        # To jedynie uproszczona przestrzeń stanów i akcji.
+        # Integracja z prawdziwą grą wymaga rlgym oraz zainstalowanej gry.
+        self.observation_space = gym.spaces.Box(
+            low=-1.0, high=1.0, shape=(10,), dtype=np.float32
+        )
+        self.action_space = gym.spaces.Discrete(5)
+
         print("Środowisko Rocket League zainicjalizowane.")
-        self.observation_space = None # Zdefiniuj przestrzeń obserwacji
-        self.action_space = None    # Zdefiniuj przestrzeń akcji
 
     def reset(self):
-        # TODO: Zresetuj stan gry do początkowego
+        """Zwraca losowy stan początkowy."""
         print("Resetowanie środowiska.")
-        initial_state = None # Pobierz początkowy stan
-        return initial_state
+        return self.observation_space.sample()
 
     def step(self, action):
-        # TODO: Wykonaj akcję w grze i zwróć nowy stan, nagrodę, flagę zakończenia epizodu i dodatkowe informacje
+        """Symuluje przejście do kolejnego stanu."""
         print(f"Wykonywanie akcji: {action}")
-        next_state = None
-        reward = 0
+        next_state = self.observation_space.sample()
+        reward = float(np.random.rand())
         done = False
         info = {}
         return next_state, reward, done, info
 
     def render(self, mode='human'):
-        # TODO: Opcjonalnie, renderuj stan gry (jeśli to potrzebne i możliwe)
-        print(f"Renderowanie środowiska (tryb: {mode})")
         pass
 
     def close(self):
-        # TODO: Zamknij połączenie z grą i zwolnij zasoby
         print("Zamykanie środowiska Rocket League.")
-        pass 

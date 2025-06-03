@@ -2,8 +2,12 @@
 # które mogą być używane w różnych częściach projektu.
 
 import json
+import os
 
-def load_config(config_path="config/settings.json"):
+DEFAULT_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "config", "settings.json")
+
+
+def load_config(config_path: str = DEFAULT_CONFIG_PATH):
     """Wczytuje plik konfiguracyjny JSON."""
     try:
         with open(config_path, 'r') as f:

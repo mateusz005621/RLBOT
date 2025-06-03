@@ -1,5 +1,4 @@
-# Ten plik będzie zawierał listę zależności projektu Python.
-# Przykładowo:
-# tensorflow
-# numpy
-# rlgym 
+torch==2.4.0
+numpy==2.2.6
+gym==0.26.2
+rlgym==2.0.1

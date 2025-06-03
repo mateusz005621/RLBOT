@@ -19,19 +19,40 @@ Ten projekt ma na celu stworzenie bota opartego na sztucznej inteligencji (AI), 
 
 ## Wymagania Wstępne
 
-(Zostanie uzupełnione później)
+- Python 3.12 lub nowszy
+- (Opcjonalnie) Zainstalowana gra Rocket League wraz z BakkesMod, jeśli chcesz
+  trenować bezpośrednio w grze.
+
+Projekt zawiera uproszczone środowisko testowe pozwalające uruchomić trening
+bez posiadania gry.
 
 ## Instalacja
 
-(Zostanie uzupełnione później)
+```bash
+pip install -r requirements.txt
+```
+
+Jeżeli planujesz używać prawdziwego środowiska z grą Rocket League, zapoznaj się
+z instrukcjami na stronie [rlgym](https://rlgym.org) dotyczącymi konfiguracji
+gry i BakkesMod.
 
 ## Użycie
 
-(Zostanie uzupełnione później)
+Do uruchomienia przykładowego treningu wystarczy komenda:
+
+```bash
+python -m src.main
+```
+
+Domyślnie skrypt uruchamia krótki trening w wbudowanym środowisku testowym.
+Parametr `num_episodes` w funkcji `main` można zmienić, aby wydłużyć trening.
 
 ## Trening Bota
 
-(Zostanie uzupełnione później)
+Aktualnie projekt udostępnia jedynie przykładową implementację pętli
+treningowej korzystającą z prostego środowiska losowego. Kod można rozbudować o
+pełną integrację z `rlgym`, aby trenować bota na prawdziwych meczach
+Rocket League.
 
 ## TODO
 
